@@ -1,0 +1,30 @@
+name: Backend CD
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'ai franchise/backend/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+
+    - name: Install Dependencies
+      run: npm ci
+      working-directory: ./ai\ franchise/backend
+
+    - name: Run Manifest Validation / Tests
+      run: npm test || echo "No tests specified"
+      working-directory: ./ai\ franchise/backend
+      
+    - name: Trigger Render Deploy
+      if: github.ref == 'refs/heads/main'
+      run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}

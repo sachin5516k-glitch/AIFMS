@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dashboard & Reports"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Placeholder for Chart (We won't add MPAndroidChart dep to avoid complexity for now, using a View placeholder) -->
+    <!-- In real app: <com.github.mikephil.charting.charts.LineChart ... /> -->
+    <TextView
+        android:text="Sales Trend (Chart Placeholder)"
+        android:gravity="center"
+        android:background="#EEE"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <Button
+        android:id="@+id/btnDownload"
+        android:text="Download Audit Report (PDF)"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnDispute"
+        android:text="Raise Dispute (Demo)"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF9800"/>
+
+</LinearLayout>

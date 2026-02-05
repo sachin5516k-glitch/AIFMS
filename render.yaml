@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ai-franchise-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node backend/src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false # User must input this in Dashboard
+      - key: JWT_SECRET
+        sync: false

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/CardView.Enterprise"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ivSeverity"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_dialog_alert"
+                app:tint="@color/error_red" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Inventory Mismatch"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="12dp"/>
+                
+            <ImageView
+                android:id="@+id/ivExpand"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/arrow_down_float"/>
+        </LinearLayout>
+
+        <!-- Expandable Content -->
+        <LinearLayout
+            android:id="@+id/layoutDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="12dp">
+            
+            <TextView
+                android:text="AI REASONING:"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"/>
+                
+            <TextView
+                android:id="@+id/tvReason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reported stock implies 50 coffees sold, but POS recorded 42. Variance > 15% threshold."
+                android:layout_marginBottom="8dp"/>
+                
+            <TextView
+                android:text="RECOMMENDATION:"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorSecondary"/>
+                
+            <TextView
+                android:id="@+id/tvRecommendation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Verify closing stock count or check waste log."/>
+
+            <Button
+                android:id="@+id/btnDispute"
+                style="@style/Button.Enterprise.Outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dispute This"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

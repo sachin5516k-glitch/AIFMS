@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ai.franchise.ui.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        
+        <action
+            android:id="@+id/action_login_to_ownerDashboard"
+            app:destination="@id/ownerDashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+            
+        <action
+            android:id="@+id/action_login_to_managerDashboard"
+            app:destination="@id/managerDashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_login_to_outletDashboard"
+            app:destination="@id/outletDashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ownerDashboardFragment"
+        android:name="com.ai.franchise.ui.dashboard.OwnerDashboardFragment"
+        android:label="Owner Dashboard"
+        tools:layout="@layout/fragment_owner_dashboard" />
+
+    <fragment
+        android:id="@+id/managerDashboardFragment"
+        android:name="com.ai.franchise.ui.dashboard.ManagerDashboardFragment"
+        android:label="Regional Manager Dashboard"
+        tools:layout="@layout/fragment_manager_dashboard" />
+
+    <fragment
+        android:id="@+id/outletDashboardFragment"
+        android:name="com.ai.franchise.ui.dashboard.OutletDashboardFragment"
+        android:label="Outlet Dashboard"
+        tools:layout="@layout/fragment_outlet_dashboard" />
+
+</navigation>

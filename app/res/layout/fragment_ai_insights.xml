@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/fullscreenBackgroundColor">
+
+    <TextView
+        android:text="AI Health Insights"
+        style="@style/Text.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"/>
+
+    <!-- Health Score Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="24dp"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical">
+        
+        <TextView
+            android:text="Overall Outlet Health"
+            android:textColor="#CCFFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+            
+        <TextView
+            android:id="@+id/tvScore"
+            android:text="85/100"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+            
+        <TextView
+            android:id="@+id/tvStatus"
+            android:text="Good Condition"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:background="#30000000"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:text="Detected Risks & Anomalies"
+        style="@style/Text.Body"
+        android:textStyle="bold"
+        android:padding="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRisks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+        
+    <ProgressBar
+         android:id="@+id/progressBar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:visibility="gone"/>
+
+</LinearLayout>
