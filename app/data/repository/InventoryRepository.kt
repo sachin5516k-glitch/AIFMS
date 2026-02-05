@@ -26,7 +26,7 @@ class InventoryRepository(private val context: Context) {
                     MockData.inventory // Fallback
                 }
             } catch (e: Exception) {
-                MockData.inventory
+                throw e
             }
         }
     }
@@ -41,7 +41,7 @@ class InventoryRepository(private val context: Context) {
                 if (!response.isSuccessful) throw Exception("Sync Failed")
                 true
             } catch (e: Exception) {
-                true // Allow for demo
+                throw e
             }
         }
     }

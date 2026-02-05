@@ -39,10 +39,8 @@ class SalesRepository(private val context: Context) {
                     throw Exception("Submit Failed: ${response.code()}")
                 }
                 true
-            } catch (e: Exception) {
                 e.printStackTrace()
-                // Fallback for demo if API unreachable
-                true 
+                throw e // No mock fallback
             }
         }
     }

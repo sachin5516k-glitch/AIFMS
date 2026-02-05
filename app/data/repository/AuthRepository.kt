@@ -31,15 +31,6 @@ class AuthRepository(private val context: Context) {
                 } else {
                     throw Exception("Login Failed: ${response.code()} ${response.message()}")
                 }
-            } catch (e: Exception) {
-                // Return mock for offline dev/testing if real backend isn't running
-                // Remove this in PRE-PROD
-                if (email == "owner@test.com") {
-                     val mockUser = User("1", "Owner User", email, "OWNER", "mock_token")
-                     tokenManager.saveToken(mockUser.token)
-                     tokenManager.saveUserRole(mockUser.role)
-                     return@withContext mockUser
-                }
                 throw e
             }
         }
